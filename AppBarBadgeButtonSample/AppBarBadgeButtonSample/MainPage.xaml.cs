@@ -29,6 +29,28 @@ namespace AppBarBadgeButtonSample
             this.rootPage.DataContext = this;
         }
 
-        public int Count { get; set; }
+
+
+        public int Count
+        {
+            get { return (int)GetValue(CountProperty); }
+            set { SetValue(CountProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Count.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CountProperty =
+            DependencyProperty.Register("Count", typeof(int), typeof(MainPage), new PropertyMetadata(0));
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(Count == 10)
+            {
+                Count = 0;
+            }
+            else
+            {
+                Count = 10;
+            }
+        }
     }
 }

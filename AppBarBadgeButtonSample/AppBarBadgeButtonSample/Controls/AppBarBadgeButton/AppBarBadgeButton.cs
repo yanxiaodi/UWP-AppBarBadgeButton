@@ -28,8 +28,32 @@ namespace AppBarBadgeButtonSample.Controls
 
         // Using a DependencyProperty as the backing store for Count.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty CountProperty =
-            DependencyProperty.Register("Count", typeof(string), typeof(AppBarBadgeButton), new PropertyMetadata("0", null));
+            DependencyProperty.Register("Count", typeof(string), typeof(AppBarBadgeButton), new PropertyMetadata("0", OnCountChanged));
 
+        private static void OnCountChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            int count = 0;
+            int.TryParse(e.NewValue.ToString(), out count);
+            if (count != 0)
+            {
+                ((AppBarBadgeButton)d).SetValue(BadgeVisibilityProperty, Visibility.Visible);
+            }
+            else
+            {
+                ((AppBarBadgeButton)d).SetValue(BadgeVisibilityProperty, Visibility.Collapsed);
+            }
+        }
+
+
+        public Visibility BadgeVisibility
+        {
+            get { return (Visibility)GetValue(BadgeVisibilityProperty); }
+            set { SetValue(BadgeVisibilityProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for BadgeVisibility.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty BadgeVisibilityProperty =
+            DependencyProperty.Register("BadgeVisibility", typeof(Visibility), typeof(AppBarBadgeButton), new PropertyMetadata(Visibility.Collapsed, null));
 
 
     }

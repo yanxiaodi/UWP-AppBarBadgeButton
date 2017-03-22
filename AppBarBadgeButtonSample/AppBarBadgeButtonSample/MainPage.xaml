@@ -19,6 +19,6 @@
     </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Button Content="Switch Value(0/10)" Click="Button_Click" />
     </Grid>
 </Page>

@@ -179,7 +179,7 @@
                             </Grid.RowDefinitions>
                             <ContentPresenter x:Name="Content" AutomationProperties.AccessibilityView="Raw" Content="{TemplateBinding Icon}" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="Stretch" Height="20" Margin="0,14,0,4"/>
                             <Border CornerRadius="8" Margin="8" HorizontalAlignment="Right" VerticalAlignment="Top" 
-                                    Background="Red"  Grid.Row="0" MinWidth="16" Height="16">
+                                    Background="Red" Visibility="{TemplateBinding BadgeVisibility}" Grid.Row="0" MinWidth="16" Height="16">
                                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                                            FontSize="10" Text="{TemplateBinding Count}" Foreground="Yellow" />
                             </Border>
