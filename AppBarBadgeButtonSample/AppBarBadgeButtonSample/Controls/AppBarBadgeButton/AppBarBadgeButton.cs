@@ -19,5 +19,18 @@ namespace AppBarBadgeButtonSample.Controls
         {
             this.DefaultStyleKey = typeof(AppBarBadgeButton);
         }
+
+        public string Count
+        {
+            get { return (string)GetValue(CountProperty); }
+            set { SetValue(CountProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Count.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CountProperty =
+            DependencyProperty.Register("Count", typeof(string), typeof(AppBarBadgeButton), new PropertyMetadata("0", null));
+
+
+
     }
 }

@@ -5,7 +5,18 @@
     xmlns:local="using:AppBarBadgeButtonSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:localControls="using:AppBarBadgeButtonSample.Controls"
+    mc:Ignorable="d"
+    x:Name="rootPage">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <localControls:AppBarBadgeButton Icon="Accept" Count="{Binding Count}" Label="AppBarButton"/>
+            <AppBarButton Icon="Cancel" Label="AppBarButton"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 

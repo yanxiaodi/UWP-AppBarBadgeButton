@@ -178,6 +178,11 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <ContentPresenter x:Name="Content" AutomationProperties.AccessibilityView="Raw" Content="{TemplateBinding Icon}" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="Stretch" Height="20" Margin="0,14,0,4"/>
+                            <Border CornerRadius="8" Margin="8" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                    Background="Red"  Grid.Row="0" MinWidth="16" Height="16">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                                           FontSize="10" Text="{TemplateBinding Count}" Foreground="Yellow" />
+                            </Border>
                             <TextBlock x:Name="TextLabel" Foreground="{TemplateBinding Foreground}" FontSize="12" FontFamily="{TemplateBinding FontFamily}" Margin="2,0,2,6" Grid.Row="1" TextAlignment="Center" TextWrapping="Wrap" Text="{TemplateBinding Label}"/>
                         </Grid>
                         <TextBlock x:Name="OverflowTextLabel" Foreground="{TemplateBinding Foreground}" FontSize="15" FontFamily="{TemplateBinding FontFamily}" HorizontalAlignment="Stretch" Margin="12,0,12,0" Padding="0,5,0,7" TextAlignment="Left" TextWrapping="NoWrap" Text="{TemplateBinding Label}" TextTrimming="Clip" Visibility="Collapsed" VerticalAlignment="Center"/>

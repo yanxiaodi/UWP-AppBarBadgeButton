@@ -25,6 +25,10 @@ namespace AppBarBadgeButtonSample
         public MainPage()
         {
             this.InitializeComponent();
+            this.Count = 10;
+            this.rootPage.DataContext = this;
         }
+
+        public int Count { get; set; }
     }
 }
